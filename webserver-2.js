@@ -5,8 +5,7 @@ var mongoose = require("mongoose")
 var friends = ["a","b","c","d","e"];
 var MongoClient = require('mongodb').MongoClient;
 app.use(body.urlencoded({extended:true}));
-
-mongoose.connect("mongodb+srv://<username>:<password>@cluster0-ks2sn.mongodb.net/test?retryWrites=true&w=majority",{ useNewUrlParser: true }).then(()=>console.log("DB connected")).catch(err => console.log(err));
+mongoose.connect("mongodb+srv://hari:harib@cluster0-ks2sn.mongodb.net/test?retryWrites=true&w=majority",{ useNewUrlParser: true }).then(()=>console.log("DB connected")).catch(err => console.log(err));
 var MongoClient = require('mongodb').MongoClient;
 var studentschema = new mongoose.Schema({
   Name:String,
@@ -21,7 +20,7 @@ app.use(express.static(__dirname+"/public"));
 var Student = mongoose.model("Student",studentschema);
 
 app.post("/update",function(req,res){
-  MongoClient.connect("mongodb+srv://<username>:<password>@cluster0-ks2sn.mongodb.net/test?retryWrites=true&w=majority", function(err, db) {
+  MongoClient.connect("mongodb+srv://hari:harib@cluster0-ks2sn.mongodb.net/test?retryWrites=true&w=majority", function(err, db) {
   //if (err) throw err;
   var dbo = db.db("test");
   var hi_2 = req.body.old
@@ -81,7 +80,7 @@ app.post("/push",function(req,res){
 })
 
 app.post("/delete",function(req,res){
-  MongoClient.connect("mongodb+srv://<username>:<password>@cluster0-ks2sn.mongodb.net/test?retryWrites=true&w=majority", function(err, db) {
+  MongoClient.connect("mongodb+srv://hari:harib@cluster0-ks2sn.mongodb.net/test?retryWrites=true&w=majority", function(err, db) {
   if (err) throw err;
   var dbo = db.db("test");
   var hi =  req.body.deliii
@@ -171,7 +170,7 @@ app.post("/find",function(req,res){
 app.get('/',function(req,res){
   //res.Sendfile(__dirname+"/public");
   // var route = req.qurey.name;
-  res.render("Home.ejs",{name:friends,student:null});
+  res.render("Home.ejs",{student:null});
 })
 app.get("/home/:new",function(res,req){
   var old = req.query.new;
