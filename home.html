@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style media="screen">
+      .head
+      {
+        display: inline-flex;
+        width: 100%;
+        background-color: aqua;
+        text-align: center;
+      }
+      .head-1
+      {
+        background-color: black;
+        color: white;
+
+
+        margin-right: 20%;
+      }
+      .img-1
+      {
+    /*  text-align: right;*/
+      padding-left: 50%;
+      }
+    </style>
+</head>
+<body>
+  <div class="head">
+  <img src="forge.jpg"style=" height: 50px;width: 50px" alt="unavailable">
+  <h1 class="head-1">Mongodb Database Viewer</h1>
+  <img class="img-1" src="forge.jpg"style=" height: 50px;width: 50px" alt="unavailable" >
+  </div>
+<br>
+<br>
+<h2 style="background-color:White"><center>Enter or Update or Find data</center></h2>
+<br>
+<hr>
+<br>
+<center>
+<p>Enter elements to an array: </p>
+<form action="/add" method="POST">
+  <label>Element to be Added:</label>
+    <input type="text" name="myinp" placeholder="Enter Elements">
+    <button>add</button>
+</form>
+</center>
+<br>
+<hr>
+<br>
+<p>Enter elements to upload to Mongodb: </p>
+<form action="/push" method="POST">
+  <label>Name:</label>
+    <input type="text" name="myname" placeholder="Enter Name">
+<label>Rollno:</label>
+    <input type="text" name="myroll" placeholder="Enter Roll-no">
+<label>Teamname:</label>
+    <input type="text" name="myteam" placeholder="Enter Teamname">
+    <button>Submit</button>
+</form>
+<br>
+<hr>
+<br>
+<p>Enter Teamname to find in Mongodb: </p>
+<form action="/find" method="POST">
+    <label>Element to be searched:</label>
+    <input type="text" name="search" placeholder="Enter Data">
+    <button>find</button>
+</form>
+<br>
+<hr>
+<br>
+
+<p><%= name %></p>
+<p> <%= student %></p>
+</body>
+</html>
