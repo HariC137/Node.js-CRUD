@@ -1,3 +1,4 @@
 # Node.js-CRUD
 An example of CRUD using node js &amp; MongoDb
- use npm -i install to install necessary repositories
+
+Use npm -i install to install necessary repositories
